@@ -16,7 +16,7 @@ export default function FAQNextConfo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="relative bg-[#f4f4f5] py-24 lg:py-32 text-[#0f172a]">
+    <section id="faq" className="relative bg-[#f4f4f5] -mt-6 pt-0 pb-24 lg:-mt-4 lg:pt-0 lg:pb-32 text-[#0f172a]">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.4fr_1fr] lg:gap-16 lg:items-start">
           {/* Left: stacked title */}

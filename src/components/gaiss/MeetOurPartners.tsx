@@ -102,7 +102,7 @@ function Marquee({
 
 export default function MeetOurPartners() {
   return (
-    <section id="partners" className="relative bg-[#f4f4f5] pt-12 pb-24 lg:pt-16 lg:pb-32">
+    <section id="partners" className="relative bg-[#f4f4f5] -mt-6 pt-0 pb-24 lg:-mt-4 lg:pt-0 lg:pb-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="font-space-grotesk font-bold text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] text-[#0f172a] leading-[1.05] tracking-tight uppercase">
@@ -115,11 +115,9 @@ export default function MeetOurPartners() {
             className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-[#0f172a] bg-[#0f172a] px-6 py-3 text-[14px] font-semibold text-white uppercase tracking-wide transition-all duration-300 hover:bg-white hover:text-[#0f172a]"
           >
             Become a sponsor
-            <span className="flex gap-0.5">
-              <span className="h-1 w-1 rounded-full bg-current" />
-              <span className="h-1 w-1 rounded-full bg-current" />
-              <span className="h-1 w-1 rounded-full bg-current" />
-            </span>
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </div>
 

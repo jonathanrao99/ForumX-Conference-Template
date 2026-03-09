@@ -8,16 +8,19 @@ import { useRef } from "react";
 const speakers = [
   {
     name: "Dr. Hardik Gohel, Ph.D.",
+    slug: "hardik-gohel",
     role: "Texas A&M University",
     image: "/speaker-hardik-gohel.png",
   },
   {
     name: "Dr. Marcus Cole",
+    slug: "marcus-cole",
     role: "CloudEdge",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=90",
   },
   {
     name: "Nina Patel",
+    slug: "nina-patel",
     role: "CyberForge",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=90",
   },
@@ -28,7 +31,7 @@ export default function MeetOurSpeakers() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="speakers" className="relative bg-white py-24 lg:py-32 overflow-hidden">
+    <section id="speakers" className="relative bg-white pt-14 pb-24 lg:pt-28 lg:pb-32 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Header */}
         <motion.div
@@ -46,7 +49,7 @@ export default function MeetOurSpeakers() {
 
           <div className="lg:mt-6 max-w-md">
             <p className="font-inter text-[17px] sm:text-[18px] leading-[1.7] text-[#475569]">
-              Global tech leaders, visionary founders, and creators shaping the future — all on one stage.
+              Global tech leaders, visionary founders, and creators shaping the future - all on one stage.
             </p>
             <Link
               href="/#speakers"
@@ -69,20 +72,28 @@ export default function MeetOurSpeakers() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-[#f4f4f5]">
+              <div className="group relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-[#f4f4f5">
                 <Image
                   src={s.image}
                   alt={s.name}
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale transition-[filter] duration-700 ease-out group-hover:grayscale-0"
                   sizes="(max-width: 640px) 100vw, 33vw"
+                />
+                {/* Grey overlay that fades out on hover */}
+                <div
+                  className="pointer-events-none absolute inset-0 bg-[#0f172a]/10 transition-opacity duration-700 ease-out group-hover:opacity-0"
+                  aria-hidden
                 />
               </div>
               <div className="mt-5 flex items-start justify-between pl-4 pr-4">
                 <div>
-                  <h3 className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-wide text-[#0f172a]">
+                  <Link
+                    href={`/speakers/${s.slug}`}
+                    className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-wide text-[#0f172a] transition-colors duration-200 hover:text-[#2563eb] focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2 rounded"
+                  >
                     {s.name}
-                  </h3>
+                  </Link>
                   <p className="mt-1 text-[13px] font-medium uppercase tracking-widest text-[#64748b]">
                     {s.role}
                   </p>

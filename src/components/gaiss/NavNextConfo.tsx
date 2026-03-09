@@ -38,8 +38,6 @@ const navItems: NavItem[] = [
     items: [
       { href: "/#tickets", label: "Registration" },
       { href: "/#schedule", label: "Schedule" },
-      { href: "/#travel", label: "Travel & Accommodation", future: true },
-      { href: "/#visa", label: "Visa Information", future: true },
     ],
   },
   {

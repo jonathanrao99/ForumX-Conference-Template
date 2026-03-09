@@ -76,14 +76,14 @@ function ParallaxImage({
             borderBottomLeftRadius: radiusFadePx,
             borderBottomRightRadius: radiusFadePx,
           }
-        : { borderRadius: 12 };
+        : { borderRadius: 0 };
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative aspect-[4/3] overflow-hidden ${radiusFade ? "" : "rounded-xl"}`}
+      className="relative aspect-[4/3] overflow-hidden"
       style={wrapperStyle}
     >
       <motion.div className="absolute inset-0" style={{ y }}>
@@ -108,7 +108,7 @@ export default function AboutSection() {
   const countdown = useCountdown(COUNTDOWN_TARGET);
 
   return (
-    <section id="about" data-dark-section className="relative pt-10 pb-24 lg:pt-12 lg:pb-32 overflow-hidden">
+    <section id="about" data-dark-section className="relative pt-10 pb-0 overflow-hidden">
       {/* Gradient fade from hero blue into black */}
       <div
         className="absolute inset-0"
@@ -143,23 +143,24 @@ export default function AboutSection() {
             <br />
             meets action
           </h2>
-          <p className="font-inter lg:mt-56 text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.7] text-white/90 max-w-lg lg:max-w-xl">
-            GAISS is a premier summit bringing together researchers, founders, and technologists from across the globe. From visionary keynotes to practical workshops and purposeful networking, the event is designed to spark ideas, forge partnerships, and shape what&apos;s next in secure AI systems. Whether you&apos;re a researcher, founder, or technologist, this is where the future unfolds.
+          <p className="font-inter lg:mt-56 text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.7] text-white/90 max-w-xl lg:max-w-2xl">
+            <strong className="font-semibold text-white">GAISS</strong> is a <span className="font-semibold text-white">premier summit</span> bringing together <span className="font-semibold text-white">researchers, founders, and technologists</span> from across the globe. From <span className="font-semibold text-white">visionary keynotes</span> to <span className="font-semibold text-white">practical workshops</span> and <span className="font-semibold text-white">purposeful networking</span>, the event is designed to <span className="font-semibold text-white">spark ideas</span>, <span className="font-semibold text-white">forge partnerships</span>, and shape what&apos;s next in <span className="font-semibold text-white">secure AI systems</span>. Whether you&apos;re a researcher, founder, or technologist, this is where <span className="font-semibold text-white">the future unfolds</span>.
           </p>
         </motion.div>
 
-        {/* Scroll-reveal images with parallax + masked movement */}
-        <div
-          ref={imagesRef}
-          className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6"
-        >
-          <ParallaxImage
+      </div>
+
+      {/* Scroll-reveal images with padding */}
+      <div
+        ref={imagesRef}
+        className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 w-full px-6 lg:px-10"
+      >
+        <ParallaxImage
             containerRef={imagesRef}
             src="/about-parallax-left.png"
             alt="Conference networking"
             index={0}
             direction="down"
-            radiusFade="top"
           />
           <ParallaxImage
             containerRef={imagesRef}
@@ -167,11 +168,11 @@ export default function AboutSection() {
             alt="Conference exchange"
             index={1}
             direction="up"
-            radiusFade="bottom"
             cropTop
           />
-        </div>
+      </div>
 
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Countdown + date + venue */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -224,8 +225,8 @@ export default function AboutSection() {
         </motion.div>
       </div>
 
-      {/* Full-width conference image */}
-      <div className="mt-16 lg:mt-24 w-full">
+      {/* Full-width conference image - no extra margin */}
+      <div className="mt-16 lg:mt-24 w-full -mb-px">
         <div className="relative w-full aspect-[16/9] min-h-[280px]">
           <Image
             src="/conference-image.JPG"

@@ -31,7 +31,7 @@ export default function WhatToExpect() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="bg-[#f4f4f5] pt-24 pb-12 lg:pt-32 lg:pb-14">
+    <section className="bg-[#f4f4f5] pt-14 pb-24 lg:pt-28 lg:pb-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <motion.h2
           ref={ref}
@@ -42,7 +42,7 @@ export default function WhatToExpect() {
         >
           Why attend
           <br />
-          <span className="inline-block pl-0">GAISS 2026</span>
+          <span className="inline-block pl-16">GAISS 2026</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
@@ -58,7 +58,7 @@ export default function WhatToExpect() {
               <h3 className="mt-3 text-[1.25rem] sm:text-[1.35rem] font-bold text-[#0f172a] leading-[1.2]">
                 {item.title}
               </h3>
-              <p className="mt-3 text-[15px] leading-[1.65] text-[#475569]">
+              <p className="mt-3 text-[16px] sm:text-[17px] leading-[1.7] text-[#475569]">
                 {item.body}
               </p>
             </motion.div>

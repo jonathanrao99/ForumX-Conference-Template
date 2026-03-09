@@ -23,7 +23,7 @@ export default function ImagesMarquee() {
   const duplicated = [...images, ...images];
 
   return (
-    <section data-dark-section className="relative overflow-hidden py-16 lg:py-20">
+    <section data-dark-section className="relative overflow-hidden pt-10 pb-24 lg:pt-12 lg:pb-32">
       {/* Dark background - same as About / Ready to Join */}
       <div className="absolute inset-0 bg-[#000]" aria-hidden />
       <DottedGlowBackground

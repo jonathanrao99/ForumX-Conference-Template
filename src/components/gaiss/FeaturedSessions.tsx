@@ -12,6 +12,7 @@ const sessions = [
     type: "Opening Keynote",
     description: "Architecting generative AI systems with security, privacy, and robustness at the core.",
     speaker: "Ava Mitchell",
+    speakerSlug: "ava-mitchell",
     org: "SecureAI Labs",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80",
   },
@@ -21,6 +22,7 @@ const sessions = [
     type: "Panel Discussion",
     description: "Protecting data and models: prompt injection, data leakage, and privacy-preserving inference.",
     speaker: "Rajan Verma",
+    speakerSlug: "rajan-verma",
     org: "CloudEdge",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
   },
@@ -30,6 +32,7 @@ const sessions = [
     type: "Tech Talk",
     description: "Deploying secure, compliant generative AI at scale in regulated industries.",
     speaker: "Emily Chen",
+    speakerSlug: "emily-chen",
     org: "Arverse",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80",
   },
@@ -39,6 +42,7 @@ const sessions = [
     type: "Technical Session",
     description: "Detecting and mitigating attacks on generative models and AI pipelines.",
     speaker: "Carlos Rios",
+    speakerSlug: "carlos-rios",
     org: "CyberForge",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
   },
@@ -48,6 +52,7 @@ const sessions = [
     type: "Fireside Chat",
     description: "Addressing ethics, bias, and transparency in generative AI systems.",
     speaker: "Mei Tanaka",
+    speakerSlug: "mei-tanaka",
     org: "Creovate AI",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
   },
@@ -57,6 +62,7 @@ const sessions = [
     type: "Closing Keynote",
     description: "Shifting security left: secure-by-design practices for AI teams.",
     speaker: "Leo Anders",
+    speakerSlug: "leo-anders",
     org: "DEVSphere",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
   },
@@ -67,7 +73,7 @@ export default function FeaturedSessions() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="schedule" className="relative bg-[#f4f4f5] pt-12 pb-8 lg:pt-14 lg:pb-10">
+    <section id="schedule" className="relative bg-[#f4f4f5] pt-10 pb-24 lg:pt-12 lg:pb-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="mx-auto max-w-[1100px] flex flex-col lg:flex-row lg:gap-16 lg:items-start">
           {/* Left: heading + button - sticky so it scrolls with user */}
@@ -88,11 +94,9 @@ export default function FeaturedSessions() {
               className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-[#0f172a] bg-[#0f172a] px-6 py-3 text-[14px] font-semibold text-white uppercase tracking-wide transition-all duration-300 hover:bg-white hover:text-[#0f172a]"
             >
               Full Schedule
-              <span className="flex gap-0.5">
-                <span className="h-1 w-1 rounded-full bg-current" />
-                <span className="h-1 w-1 rounded-full bg-current" />
-                <span className="h-1 w-1 rounded-full bg-current" />
-              </span>
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </motion.div>
 
@@ -111,8 +115,10 @@ export default function FeaturedSessions() {
                   <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#0f172a] leading-snug">
                     {s.title}
                   </h3>
-                  <p className="mt-1 text-[14px] text-[#64748b]">
-                    {s.time} - {s.type}
+                  <p className="mt-1.5 text-[14px] text-[#64748b]">
+                    <span className="font-semibold font-space-grotesk tabular-nums text-[#0f172a]">{s.time}</span>
+                    <span className="text-[#94a3b8]"> · </span>
+                    {s.type}
                   </p>
                 </div>
                 {/* Right: description + speaker */}
@@ -121,11 +127,14 @@ export default function FeaturedSessions() {
                     {s.description}
                   </p>
                   <div className="mt-4 flex items-center gap-3">
-                    <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[#e2e8f0]">
+                    <Link href={`/speakers/${s.speakerSlug}`} className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[#e2e8f0] block">
                       <Image src={s.image} alt={s.speaker} fill className="object-cover" sizes="40px" />
-                    </div>
+                    </Link>
                     <p className="text-[13px] font-semibold uppercase tracking-wide text-[#0f172a]">
-                      {s.speaker}, {s.org}
+                      <Link href={`/speakers/${s.speakerSlug}`} className="transition-colors hover:text-[#2563eb] focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-1 rounded">
+                        {s.speaker}
+                      </Link>
+                      <span>, {s.org}</span>
                     </p>
                   </div>
                 </div>

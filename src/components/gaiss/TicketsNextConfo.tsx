@@ -50,7 +50,7 @@ const tiers = [
 
 export default function TicketsNextConfo() {
   return (
-    <section id="tickets" className="relative bg-[#f4f4f5] pt-10 pb-24 lg:pt-12 lg:pb-32">
+    <section id="tickets" className="relative bg-[#f4f4f5] -mt-6 pt-0 pb-24 lg:-mt-4 lg:pt-0 lg:pb-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

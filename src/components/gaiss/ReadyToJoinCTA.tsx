@@ -10,7 +10,7 @@ export default function ReadyToJoinCTA() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section data-dark-section className="relative overflow-hidden py-24 lg:py-32">
+    <section data-dark-section className="relative overflow-hidden pt-16 pb-24 lg:pt-20 lg:pb-32">
       {/* Dark background - same as About section */}
       <div className="absolute inset-0 bg-[#000]" aria-hidden />
       <DottedGlowBackground
@@ -42,7 +42,7 @@ export default function ReadyToJoinCTA() {
           {/* Right: description + CTA */}
           <div className="flex flex-col gap-8 lg:max-w-xl">
             <p className="font-inter text-[17px] sm:text-[18px] leading-[1.7] text-white/90">
-              Join the biggest gathering of builders and thought leaders in secure AI. Secure your spot before it&apos;s too late.
+              Join the <span className="font-semibold text-white">biggest gathering</span> of <span className="font-semibold text-white">builders and thought leaders</span> in <span className="font-semibold text-white">Generative AI for Secure Systems</span>. Secure your spot before it&apos;s too late.
             </p>
             <HoverAnimationButton
               href="/#tickets"

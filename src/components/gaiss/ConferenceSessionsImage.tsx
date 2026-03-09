@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ConferenceSessionsImage() {
   return (
-    <section className="bg-[#f4f4f5] pt-8 pb-8 lg:pt-10 lg:pb-10">
+    <section className="bg-[#f4f4f5] -mt-8 pt-0 pb-4 lg:-mt-8 lg:pt-0 lg:pb-8">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="overflow-hidden rounded-xl">
           <Image
