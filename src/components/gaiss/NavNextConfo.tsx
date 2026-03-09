@@ -221,7 +221,7 @@ export default function NavNextConfo() {
             );
           })}
           <div className={`ml-1 mr-4 h-4 w-px shrink-0 ${textLight ? "bg-white/50" : "bg-[#1e293b]/30"}`} />
-          <HoverAnimationButton href="/#tickets" className="btn-hover-anim-primary !py-2.5 !px-5 text-[15px] tracking-wide">
+          <HoverAnimationButton href="/#tickets" className="btn-hover-anim-primary shrink-0 !py-2.5 !px-10 text-[17px] tracking-widest">
             Get a ticket
           </HoverAnimationButton>
         </div>
@@ -321,7 +321,7 @@ export default function NavNextConfo() {
               <HoverAnimationButton
                 href="/#tickets"
                 onClick={() => setOpen(false)}
-                className="btn-hover-anim-primary mt-4 !py-3.5 !px-7 text-center text-[16px] tracking-wide inline-block w-full"
+                className="btn-hover-anim-primary mt-4 w-fit self-start !py-4 !px-10 text-[17px] tracking-widest"
               >
                 Get a ticket
               </HoverAnimationButton>

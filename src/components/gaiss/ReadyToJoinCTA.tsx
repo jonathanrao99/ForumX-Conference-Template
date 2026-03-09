@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Link from "next/link";
+import HoverAnimationButton from "@/components/ui/HoverAnimationButton";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 
 export default function ReadyToJoinCTA() {
@@ -35,7 +35,7 @@ export default function ReadyToJoinCTA() {
           <h2 className="font-space-grotesk font-bold text-[2.25rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] text-white leading-[1.05] tracking-tight uppercase shrink-0 lg:max-w-[45%]">
             Ready to join
             <br />
-            <span className="inline-block pl-0 lg:pl-12">the future</span>
+            <span className="inline-block pl-16">the future</span>
             <br />of <span>tech?</span>
           </h2>
 
@@ -44,17 +44,12 @@ export default function ReadyToJoinCTA() {
             <p className="font-inter text-[17px] sm:text-[18px] leading-[1.7] text-white/90">
               Join the biggest gathering of builders and thought leaders in secure AI. Secure your spot before it&apos;s too late.
             </p>
-            <Link
+            <HoverAnimationButton
               href="/#tickets"
-              className="inline-flex w-fit items-center gap-2 rounded-full border-2 border-[#0f172a] bg-white px-8 py-4 text-[15px] font-semibold text-[#0f172a] uppercase tracking-wide transition-all duration-300 hover:bg-[#0f172a] hover:text-white"
+              className="btn-hover-anim-primary mt-2 w-fit self-start !py-4 !px-6 text-[16px] tracking-widest"
             >
               Get your ticket now
-              <span className="flex gap-0.5">
-                <span className="h-1 w-1 rounded-full bg-current" />
-                <span className="h-1 w-1 rounded-full bg-current" />
-                <span className="h-1 w-1 rounded-full bg-current" />
-              </span>
-            </Link>
+            </HoverAnimationButton>
           </div>
         </motion.div>
       </div>

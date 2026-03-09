@@ -1,14 +1,14 @@
-import HeroNextConfo from "@/components/nextconfo/HeroNextConfo";
-import AboutSection from "@/components/nextconfo/AboutSection";
-import MeetOurSpeakers from "@/components/nextconfo/MeetOurSpeakers";
-import WhatToExpect from "@/components/nextconfo/WhatToExpect";
-import ConferenceSessionsImage from "@/components/nextconfo/ConferenceSessionsImage";
-import FeaturedSessions from "@/components/nextconfo/FeaturedSessions";
-import TicketsNextConfo from "@/components/nextconfo/TicketsNextConfo";
-import MeetOurPartners from "@/components/nextconfo/MeetOurPartners";
-import FAQNextConfo from "@/components/nextconfo/FAQNextConfo";
-import ReadyToJoinCTA from "@/components/nextconfo/ReadyToJoinCTA";
-import ImagesMarquee from "@/components/nextconfo/ImagesMarquee";
+import HeroNextConfo from "@/components/gaiss/HeroNextConfo";
+import AboutSection from "@/components/gaiss/AboutSection";
+import MeetOurSpeakers from "@/components/gaiss/MeetOurSpeakers";
+import WhatToExpect from "@/components/gaiss/WhatToExpect";
+import ConferenceSessionsImage from "@/components/gaiss/ConferenceSessionsImage";
+import FeaturedSessions from "@/components/gaiss/FeaturedSessions";
+import TicketsNextConfo from "@/components/gaiss/TicketsNextConfo";
+import MeetOurPartners from "@/components/gaiss/MeetOurPartners";
+import FAQNextConfo from "@/components/gaiss/FAQNextConfo";
+import ReadyToJoinCTA from "@/components/gaiss/ReadyToJoinCTA";
+import ImagesMarquee from "@/components/gaiss/ImagesMarquee";
 
 export default function Home() {
   return (

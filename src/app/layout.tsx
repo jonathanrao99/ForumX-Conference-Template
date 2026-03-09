@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import NavNextConfo from "@/components/nextconfo/NavNextConfo";
-import FooterNextConfo from "@/components/nextconfo/FooterNextConfo";
+import NavNextConfo from "@/components/gaiss/NavNextConfo";
+import FooterNextConfo from "@/components/gaiss/FooterNextConfo";
 
 const inter = Inter({
   variable: "--font-inter",

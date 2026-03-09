@@ -54,7 +54,6 @@ function LogoImage({
         width={size.width}
         height={size.height}
         className={`object-contain object-center ${large ? "max-h-14 max-w-[180px]" : "max-h-12 max-w-[140px]"}`}
-        unoptimized
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.style.display = "none";
