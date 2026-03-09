@@ -1,26 +1,330 @@
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-hover: #3b82f6;
+  --surface: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.65;
+  font-size: 1.0625rem;
 }
+
+/* Font family utilities for About section */
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-weight: 700;
+}
+.font-inter {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Lighter weight for ticket bullets — Plus Jakarta Sans ExtraLight (200) */
+.font-ticket-bullets {
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  font-weight: 200;
+}
+
+/* Readable body text */
+.text-body {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+  .text-body {
+    font-size: 1.125rem;
+  }
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.25);
+  color: #1e293b;
+}
+
+/* Horizontal rule on light backgrounds */
+.hr-fade-light {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.08) 70%, transparent);
+}
+
+/* Card on light theme */
+.glass {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* Button glow on hover */
+.btn-glow {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), transparent 60%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(12px);
+}
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
+/* Heading utility — slightly larger for readability */
+.heading-xl {
+  font-size: clamp(2.75rem, 6.5vw, 6rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.heading-lg {
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.heading-section {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* Smooth text reveal container */
+.text-reveal {
+  overflow: hidden;
+  display: block;
+}
+
+/* Hover animation button (21st.dev style) */
+.btn-hover-anim,
+.btn-hover-anim *,
+.btn-hover-anim::after,
+.btn-hover-anim::before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-hover-anim {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 99rem;
+  border-width: 1px;
+  padding: 0.8rem 3rem;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-hover-anim:disabled {
+  cursor: default;
+}
+
+.btn-hover-anim svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-hover-anim .text-container {
+  display: block;
+  mix-blend-mode: difference;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-hover-anim .text {
+  display: block;
+  position: relative;
+}
+
+.btn-hover-anim:hover .text {
+  -webkit-animation: move-up-alternate 0.3s forwards;
+  animation: move-up-alternate 0.3s forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(80%); }
+  51% { transform: translateY(-80%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes move-up-alternate {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(80%); }
+  51% { transform: translateY(-80%); }
+  to { transform: translateY(0); }
+}
+
+.btn-hover-anim::after,
+.btn-hover-anim::before {
+  --skew: 0.2;
+  background: #fff;
+  content: "";
+  display: block;
+  height: 102%;
+  left: calc(-50% - 50% * var(--skew));
+  pointer-events: none;
+  position: absolute;
+  top: -104%;
+  transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.btn-hover-anim::after {
+  --progress: 0%;
+  left: calc(50% + 50% * var(--skew));
+  top: 102%;
+  z-index: -1;
+}
+
+.btn-hover-anim:hover::before {
+  --progress: 100%;
+}
+
+.btn-hover-anim:hover::after {
+  --progress: -102%;
+}
+
+/* Blue nav variant: no rounded edges, blue → white on hover */
+.btn-hover-anim.btn-hover-anim-primary {
+  background-color: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 0;
+  color: #fff;
+}
+
+.btn-hover-anim.btn-hover-anim-primary .text-container {
+  mix-blend-mode: normal;
+}
+
+.btn-hover-anim.btn-hover-anim-primary .text {
+  color: #fff;
+}
+
+.btn-hover-anim.btn-hover-anim-primary:hover {
+  border-color: #2563eb;
+}
+
+.btn-hover-anim.btn-hover-anim-primary:hover .text-container {
+  mix-blend-mode: normal;
+}
+
+.btn-hover-anim.btn-hover-anim-primary:hover .text {
+  color: #2563eb;
+}
+
+/* Hero variant: white default, blue slide on hover, white text on hover */
+.btn-hover-anim.btn-hover-anim-hero {
+  background-color: #fff;
+  border: 1px solid #2563eb;
+  border-radius: 0;
+  color: #2563eb;
+  margin-top: 3rem;
+}
+
+.btn-hover-anim.btn-hover-anim-hero .text-container {
+  mix-blend-mode: normal;
+}
+
+.btn-hover-anim.btn-hover-anim-hero .text {
+  color: #2563eb;
+}
+
+.btn-hover-anim.btn-hover-anim-hero::before,
+.btn-hover-anim.btn-hover-anim-hero::after {
+  background: #2563eb;
+}
+
+.btn-hover-anim.btn-hover-anim-hero:hover {
+  border-color: #fff;
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.btn-hover-anim.btn-hover-anim-hero:hover .text-container {
+  mix-blend-mode: normal;
+}
+
+.btn-hover-anim.btn-hover-anim-hero:hover .text {
+  color: #fff;
+}
+
+/* Marquee: scroll right to left */
+@keyframes marquee-right-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-right-left {
+  animation: marquee-right-left 25s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee-right-left 50s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-right-left,
+  .animate-marquee-slow {
+    animation: none;
+  }
+}
+
