@@ -74,6 +74,35 @@ body {
   color: #1e293b;
 }
 
+/* Hero image section — dvh for consistent mobile viewport (address bar changes) */
+.h-hero-image {
+  height: 75vh;
+  height: 75dvh;
+}
+@media (min-width: 1024px) {
+  .h-hero-image {
+    height: 65vh;
+    height: 65dvh;
+  }
+}
+
+/* Hero gradient overlay — viewport-relative on mobile for consistent blue transition */
+.h-hero-gradient {
+  height: 10rem; /* 160px fallback */
+  height: 22dvh;
+}
+@media (min-width: 640px) {
+  .h-hero-gradient {
+    height: 13rem;
+    height: 26dvh;
+  }
+}
+@media (min-width: 1024px) {
+  .h-hero-gradient {
+    height: 16rem; /* fixed on desktop */
+  }
+}
+
 /* Horizontal rule on light backgrounds */
 .hr-fade-light {
   border: 0;

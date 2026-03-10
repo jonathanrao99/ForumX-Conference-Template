@@ -14,7 +14,7 @@ export default function HeroNextConfo() {
   return (
     <div ref={ref} data-hero>
       {/* ─── IMAGE SECTION ─── */}
-      <section data-dark-section className="relative h-[75vh] min-h-[340px] lg:h-[65vh] lg:min-h-[400px] overflow-hidden bg-[#0a0a0f]">
+      <section data-dark-section className="relative h-hero-image min-h-[max(340px,50dvh)] lg:min-h-[400px] overflow-hidden bg-[#0a0a0f]">
         <motion.div className="absolute inset-0" style={{ y: imgY }}>
           <Image
             src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80"
@@ -27,7 +27,7 @@ export default function HeroNextConfo() {
         </motion.div>
         {/* Fade from image into blue — sits at the very bottom of the image section */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-40 sm:h-52 lg:h-64 pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 h-hero-gradient pointer-events-none"
           style={{ background: "linear-gradient(to bottom, transparent 0%, #2563eb 100%)" }}
           aria-hidden
         />
