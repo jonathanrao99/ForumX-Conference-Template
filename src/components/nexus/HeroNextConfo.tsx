@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
-import Link from "next/link";
 import HoverAnimationButton from "@/components/ui/HoverAnimationButton";
 import Image from "next/image";
 
