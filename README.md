@@ -12,17 +12,11 @@ The demo uses **ForumX Summit 2027** as placeholder branding—swap it everywher
 
 ![ForumX — hero and nav](docs/readme-assets/forumx-01-hero.png)
 
-
 ![ForumX — about section with parallax imagery and countdown](docs/readme-assets/forumx-02-about-countdown.png)
 
-
-(docs/readme-assets/forumx-03-speakers.png)
-
-### 4. Tickets & pricing
+![ForumX — meet our speakers](docs/readme-assets/forumx-03-speakers.png)
 
 ![ForumX — ticket tiers](docs/readme-assets/forumx-04-tickets.png)
-
-### 5. Dark sections (shared look)
 
 ![ForumX — dark UI sections (about / marquee / footer style)](docs/readme-assets/forumx-05-dark-sections.png)
 
