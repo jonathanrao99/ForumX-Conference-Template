@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import NavNextConfo from "@/components/nexus/NavNextConfo";
 import FooterNextConfo from "@/components/nexus/FooterNextConfo";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -41,6 +42,7 @@ export default function RootLayout({
         <NavNextConfo />
         {children}
         <FooterNextConfo />
+        <Analytics />
       </body>
     </html>
   );
