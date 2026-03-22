@@ -36,9 +36,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# Large demo video (GitHub file limit ~100MB — use Git LFS or host externally)
-docs/readme-assets/*.mov
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts

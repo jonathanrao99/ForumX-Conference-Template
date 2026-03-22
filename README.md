@@ -16,62 +16,25 @@ The demo below uses **Nexus Summit 2027** and placeholder copy—treat it as a s
 
 ---
 
-## Preview
+## Walkthrough
 
-### Hero & navigation
+Full scroll-through of the site (with audio if your file includes it):
 
-![Hero — Nexus Summit 2027](docs/readme-assets/01-hero-nexus-summit.png)
+<video src="docs/readme-assets/nexus-summit-walkthrough.mov" width="100%" controls playsinline></video>
 
-### About — “Where innovation meets action”
-
-![About section with innovation headline](docs/readme-assets/02-about-innovation.png)
-
-### Parallax imagery & countdown
-
-![Parallax images with date, countdown, and venue](docs/readme-assets/03-parallax-countdown.png)
-
-### Speakers
-
-![Meet our speakers](docs/readme-assets/04-meet-speakers.png)
-
-### Why attend
-
-![Why attend Nexus Summit 2027](docs/readme-assets/05-why-attend.png)
-
-### Featured sessions
-
-![Featured sessions schedule](docs/readme-assets/06-featured-sessions.png)
-
-### Tickets
-
-![Ticket pricing tiers](docs/readme-assets/07-tickets-pricing.png)
-
-### Partners
-
-![Meet our partners](docs/readme-assets/08-partners.png)
-
-### FAQ
-
-![Frequently asked questions](docs/readme-assets/09-faq.png)
-
-### CTA & gallery strip
-
-![Ready to join — image marquee](docs/readme-assets/10-cta-marquee.png)
-
-### Conference moments
-
-![Conference / sessions visual](docs/readme-assets/11-conference-strip.png)
-
-### Footer
-
-![Footer with links and contact](docs/readme-assets/12-footer.png)
+[Open or download the video](./docs/readme-assets/nexus-summit-walkthrough.mov)
 
 ---
 
-## Screen walkthrough
+## Screenshots
 
-A full-page screen recording lives at **`docs/readme-assets/nexus-summit-walkthrough.mov`**.  
-GitHub blocks files **over 100MB** in normal repos, so that video is **gitignored** by default. Keep it on your machine, use **[Git LFS](https://git-lfs.github.com/)**, or upload to YouTube / Drive and link it here instead.
+| Hero & nav | Parallax + countdown |
+|:------------:|:---------------------:|
+| ![Hero](docs/readme-assets/nexus-hero.png) | ![Parallax and countdown](docs/readme-assets/nexus-parallax-countdown.png) |
+
+| Speakers | Tickets |
+|:--------:|:-------:|
+| ![Speakers](docs/readme-assets/nexus-speakers.png) | ![Tickets](docs/readme-assets/nexus-tickets.png) |
 
 ---
 
