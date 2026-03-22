@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import NavNextConfo from "@/components/nexus/NavNextConfo";
-import FooterNextConfo from "@/components/nexus/FooterNextConfo";
+import NavNextConfo from "@/components/forumx/NavNextConfo";
+import FooterNextConfo from "@/components/forumx/FooterNextConfo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,9 +25,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Nexus Summit 2027 — Professional Conference Template",
+  title: "ForumX Summit 2027 — Conference Website Template",
   description:
-    "Nexus Summit 2027. June 12–14, 2027 · San Francisco, CA. A modern, reusable conference website template—customize branding, dates, and content for your event.",
+    "ForumX Summit 2027. June 12–14, 2027 · San Francisco, CA. A modern conference template—swap branding, dates, and content for your event.",
 };
 
 export default function RootLayout({
