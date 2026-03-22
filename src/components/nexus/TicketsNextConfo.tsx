@@ -111,7 +111,7 @@ export default function TicketsNextConfo() {
                 />
 
                 <p className="mt-4 text-center text-[15px] font-space-grotesk font-light text-[#64748b]">
-                  Valid until September 28th or until Sold Out
+                  Early pricing until May 31 or until sold out
                 </p>
               </div>
             </motion.div>

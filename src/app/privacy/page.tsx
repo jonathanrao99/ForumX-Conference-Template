@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy | IEEE ICAIC",
+  title: "Privacy | Nexus Summit 2027",
   description: "Privacy policy.",
 };
 

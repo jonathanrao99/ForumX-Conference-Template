@@ -87,7 +87,6 @@ function Marquee({
           </div>
         ))}
       </div>
-      {/* Fade edges */}
       <div
         className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent"
         aria-hidden
@@ -128,9 +127,7 @@ export default function MeetOurPartners() {
           transition={{ duration: 0.5 }}
           className="mt-14 lg:mt-20 flex flex-col gap-8"
         >
-          {/* Diamond + Platinum side by side; Platinum spans remaining width like Gold */}
           <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-[0.55fr_1fr]">
-            {/* Diamond Partner - label inside card, marquee */}
             <div className="min-w-0 overflow-hidden rounded-[20px] border border-[#e5e7eb] bg-white px-8 py-12 shadow-sm">
               <p className="mb-8 text-center text-lg font-semibold uppercase tracking-wider text-[#374151]">
                 Diamond partner
@@ -138,7 +135,6 @@ export default function MeetOurPartners() {
               <Marquee items={diamondPartners} className="py-4" />
             </div>
 
-            {/* Platinum Partners - label inside card, marquee */}
             <div className="min-w-0 overflow-hidden rounded-[20px] border border-[#e5e7eb] bg-white px-8 py-12 shadow-sm">
               <p className="mb-8 text-center text-lg font-semibold uppercase tracking-wider text-[#374151]">
                 Platinum partners
@@ -147,7 +143,6 @@ export default function MeetOurPartners() {
             </div>
           </div>
 
-          {/* Gold Partners - label inside card, marquee, full width */}
           <div className="rounded-[20px] border border-[#e5e7eb] bg-white px-8 py-12 shadow-sm">
             <p className="mb-8 text-center text-lg font-semibold uppercase tracking-wider text-[#374151]">
               Gold partners

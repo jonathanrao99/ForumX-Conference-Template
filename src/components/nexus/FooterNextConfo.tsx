@@ -20,7 +20,7 @@ const navigation = [
 ];
 
 const quickLinks = [
-  { href: "/#about", label: "About GAISS" },
+  { href: "/#about", label: "About Nexus" },
   { href: "/#speakers", label: "Keynote Speakers" },
   { href: "/#schedule", label: "Schedule" },
   { href: "/#venue", label: "Venue" },
@@ -54,16 +54,16 @@ export default function FooterNextConfo() {
           {/* Logo + Contact */}
           <div className="lg:col-span-2">
             <p className="font-space-grotesk font-bold text-4xl lg:text-5xl tracking-tight text-white">
-              GAISS<span className="text-[#2563eb]">.</span>
+              NEXUS<span className="text-[#2563eb]">.</span>
             </p>
             <p className="mt-6 text-[14px] font-medium uppercase tracking-[0.2em] text-white/60">
               Contact us
             </p>
             <a
-              href="mailto:contact@gaiss.info"
+              href="mailto:hello@nexusconf.example.com"
               className="mt-2 block text-[16px] lg:text-[17px] text-white/90 transition-colors hover:text-[#2563eb]"
             >
-              contact@gaiss.info
+              hello@nexusconf.example.com
             </a>
           </div>
 
@@ -127,7 +127,7 @@ export default function FooterNextConfo() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[15px] lg:text-[16px] text-white/60 uppercase tracking-wide">
-            Copyright | © GAISS {new Date().getFullYear()} All rights reserved
+            Copyright | © Nexus Summit {new Date().getFullYear()} All rights reserved
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map(({ href, icon: Icon, label }) => (

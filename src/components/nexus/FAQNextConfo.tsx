@@ -9,7 +9,7 @@ const faqs = [
   { q: "Do I need a printed ticket?", a: "No — digital tickets are accepted. Show your confirmation email or QR code at check-in." },
   { q: "Is there a student discount?", a: "Yes. Contact us with your .edu email for eligibility and discounted pricing." },
   { q: "Can I transfer my ticket?", a: "Tickets are transferable up to 48 hours before the event. Contact support for details." },
-  { q: "Where is the venue?", a: "The University of Texas at Austin, 110 Inner Campus Drive, Austin, TX 78705. Full address and travel details are included with your ticket confirmation." },
+  { q: "Where is the venue?", a: "The main program is held at a downtown convention center in San Francisco, CA. Full address, transit, and parking details are included with your ticket confirmation—replace this text with your real venue." },
 ];
 
 export default function FAQNextConfo() {

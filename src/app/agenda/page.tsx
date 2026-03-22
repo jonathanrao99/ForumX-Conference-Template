@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Agenda | IEEE ICAIC",
+  title: "Agenda | Nexus Summit 2027",
   description: "Conference schedule and agenda.",
 };
 

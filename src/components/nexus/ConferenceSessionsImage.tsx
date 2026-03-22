@@ -8,11 +8,11 @@ export default function ConferenceSessionsImage() {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="overflow-hidden rounded-xl">
           <Image
-            src="/conference-sessions.png"
-            alt="GAISS conference sessions"
+            src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1400&q=80"
+            alt="Conference auditorium and breakout sessions"
             width={1400}
             height={700}
-            className="h-auto w-full object-contain"
+            className="h-auto w-full object-cover aspect-[2/1]"
             sizes="100vw"
             loading="lazy"
           />

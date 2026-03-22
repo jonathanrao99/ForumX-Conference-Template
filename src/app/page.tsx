@@ -1,14 +1,14 @@
-import HeroNextConfo from "@/components/gaiss/HeroNextConfo";
-import AboutSection from "@/components/gaiss/AboutSection";
-import MeetOurSpeakers from "@/components/gaiss/MeetOurSpeakers";
-import WhatToExpect from "@/components/gaiss/WhatToExpect";
-import ConferenceSessionsImage from "@/components/gaiss/ConferenceSessionsImage";
-import FeaturedSessions from "@/components/gaiss/FeaturedSessions";
-import TicketsNextConfo from "@/components/gaiss/TicketsNextConfo";
-import MeetOurPartners from "@/components/gaiss/MeetOurPartners";
-import FAQNextConfo from "@/components/gaiss/FAQNextConfo";
-import ReadyToJoinCTA from "@/components/gaiss/ReadyToJoinCTA";
-import ImagesMarquee from "@/components/gaiss/ImagesMarquee";
+import HeroNextConfo from "@/components/nexus/HeroNextConfo";
+import AboutSection from "@/components/nexus/AboutSection";
+import MeetOurSpeakers from "@/components/nexus/MeetOurSpeakers";
+import WhatToExpect from "@/components/nexus/WhatToExpect";
+import ConferenceSessionsImage from "@/components/nexus/ConferenceSessionsImage";
+import FeaturedSessions from "@/components/nexus/FeaturedSessions";
+import TicketsNextConfo from "@/components/nexus/TicketsNextConfo";
+import MeetOurPartners from "@/components/nexus/MeetOurPartners";
+import FAQNextConfo from "@/components/nexus/FAQNextConfo";
+import ReadyToJoinCTA from "@/components/nexus/ReadyToJoinCTA";
+import ImagesMarquee from "@/components/nexus/ImagesMarquee";
 
 export default function Home() {
   return (

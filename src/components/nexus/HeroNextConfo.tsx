@@ -27,10 +27,10 @@ export default function HeroNextConfo() {
           }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80"
-            alt="GAISS Summit — conference attendees at a tech summit on generative AI for secure systems"
+            src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1920&q=85"
+            alt="Nexus Summit — audience seated for a keynote and speaker"
             fill
-            className="object-cover scale-[1.1] grayscale brightness-[0.45] contrast-110"
+            className="object-cover object-[center_66%] scale-[1.1] grayscale brightness-[0.45] contrast-110"
             priority
             sizes="100vw"
           />
@@ -46,13 +46,13 @@ export default function HeroNextConfo() {
       {/* ─── BLUE SECTION ─── */}
       <section data-hero-end data-dark-section className="relative bg-[#2563eb] pb-10 lg:pb-14">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-          {/* Headline: GAISS left, SUMMIT 2026 right-aligned below */}
+          {/* Headline: NEXUS left, SUMMIT 2027 right-aligned below */}
           <h1>
             <span className="block font-extrabold italic tracking-[-0.04em] text-white text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[8rem] xl:text-[9.5rem] leading-[0.95] uppercase">
-              GAISS
+              NEXUS
             </span>
             <span className="block text-right font-extrabold italic tracking-[-0.04em] text-white text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[8rem] xl:text-[9.5rem] leading-[0.95] uppercase">
-              SUMMIT 2026
+              SUMMIT 2027
             </span>
           </h1>
 
@@ -64,7 +64,7 @@ export default function HeroNextConfo() {
                 Ready to be part of it?
               </p>
               <p className="mt-2.5 text-lg sm:text-lg leading-relaxed text-white/90">
-                Don&apos;t miss the premier conference on <strong className="italic font-bold text-white">Generative AI for Secure Systems</strong>! Get your tickets now and be part of the future of technology!
+                Join leaders in <strong className="italic font-bold text-white">technology, strategy, and innovation</strong> for three days of keynotes, workshops, and networking. Reserve your pass and shape what comes next.
               </p>
               <HoverAnimationButton
                 href="/#tickets"
@@ -80,13 +80,13 @@ export default function HeroNextConfo() {
                 <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                 </svg>
-                <span className="text-base font-medium uppercase tracking-widest">Austin, TX</span>
+                <span className="text-base font-medium uppercase tracking-widest">San Francisco, CA</span>
               </div>
               <div className="flex items-center gap-3 bg-[#1d4ed8] px-6 py-4 text-white">
                 <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" />
                 </svg>
-                <span className="text-base font-medium uppercase tracking-widest">October 28-30, 2026</span>
+                <span className="text-base font-medium uppercase tracking-widest">June 12–14, 2027</span>
               </div>
             </div>
           </div>

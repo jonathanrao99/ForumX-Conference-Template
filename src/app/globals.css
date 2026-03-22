@@ -74,7 +74,7 @@ body {
   color: #1e293b;
 }
 
-/* Hero image section — sized so image + gradient + "GAISS SUMMIT 2026" fit in viewport */
+/* Hero image section — sized so image + gradient + headline fit in viewport */
 .h-hero-image {
   height: calc(100vh - 10.5rem); /* fallback */
   height: calc(100dvh - 10.5rem); /* 10.5rem for headline on mobile */

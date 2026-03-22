@@ -7,64 +7,58 @@ import { useRef } from "react";
 
 const sessions = [
   {
-    title: "Building Secure AI Systems",
-    time: "10:00 AM",
-    type: "Opening Keynote",
-    description: "Architecting generative AI systems with security, privacy, and robustness at the core.",
-    speaker: "Ava Mitchell",
-    speakerSlug: "ava-mitchell",
-    org: "SecureAI Labs",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80",
+    title: "Opening Keynote: The Next Decade of Innovation",
+    time: "9:00 AM",
+    type: "Keynote",
+    description: "A forward-looking view on how organizations can adapt strategy, culture, and technology in a rapidly changing landscape.",
+    speaker: "Alex Morgan",
+    org: "Summit Labs",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80",
   },
   {
-    title: "LLM Security & Privacy",
-    time: "2:00 PM",
-    type: "Panel Discussion",
-    description: "Protecting data and models: prompt injection, data leakage, and privacy-preserving inference.",
-    speaker: "Rajan Verma",
-    speakerSlug: "rajan-verma",
-    org: "CloudEdge",
+    title: "Panel: Leadership in Uncertain Times",
+    time: "11:00 AM",
+    type: "Panel",
+    description: "Executives share lessons on resilience, decision-making, and building teams that thrive under pressure.",
+    speaker: "Jordan Lee",
+    org: "Northwind Ventures",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80",
   },
   {
-    title: "Generative AI in Enterprise",
-    time: "1:30 PM",
-    type: "Tech Talk",
-    description: "Deploying secure, compliant generative AI at scale in regulated industries.",
-    speaker: "Emily Chen",
-    speakerSlug: "emily-chen",
-    org: "Arverse",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80",
+    title: "Workshop: From Strategy to Execution",
+    time: "2:00 PM",
+    type: "Workshop",
+    description: "Practical frameworks to align stakeholders, prioritize initiatives, and measure outcomes.",
+    speaker: "Sam Rivera",
+    org: "Horizon Institute",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80",
   },
   {
-    title: "Adversarial Defense for AI",
-    time: "11:00 AM",
-    type: "Technical Session",
-    description: "Detecting and mitigating attacks on generative models and AI pipelines.",
-    speaker: "Carlos Rios",
-    speakerSlug: "carlos-rios",
-    org: "CyberForge",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-  },
-  {
-    title: "Trust & Ethics in AI",
-    time: "9:30 AM",
+    title: "Fireside: Building Trust at Scale",
+    time: "10:30 AM",
     type: "Fireside Chat",
-    description: "Addressing ethics, bias, and transparency in generative AI systems.",
-    speaker: "Mei Tanaka",
-    speakerSlug: "mei-tanaka",
-    org: "Creovate AI",
+    description: "How leading brands earn loyalty through transparency, ethics, and consistent experience.",
+    speaker: "Morgan Blake",
+    org: "Meridian Group",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+  },
+  {
+    title: "Tech Talk: Data-Driven Decision Making",
+    time: "1:15 PM",
+    type: "Technical Session",
+    description: "Turning analytics into action—tools, pitfalls, and real-world case studies.",
+    speaker: "Taylor Wu",
+    org: "Signal Analytics",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
   },
   {
-    title: "Secure AI Development Practices",
-    time: "12:00 PM",
+    title: "Closing Keynote: What We Learned Together",
+    time: "4:00 PM",
     type: "Closing Keynote",
-    description: "Shifting security left: secure-by-design practices for AI teams.",
-    speaker: "Leo Anders",
-    speakerSlug: "leo-anders",
-    org: "DEVSphere",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+    description: "Highlights from the conference and a call to action for the year ahead.",
+    speaker: "Casey Park",
+    org: "Volt Collective",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
   },
 ];
 
@@ -76,7 +70,6 @@ export default function FeaturedSessions() {
     <section id="schedule" className="relative bg-[#f4f4f5] pt-10 pb-24 lg:pt-12 lg:pb-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="mx-auto max-w-[1100px] flex flex-col lg:flex-row lg:gap-16 lg:items-start">
-          {/* Left: heading + button - sticky so it scrolls with user */}
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +93,6 @@ export default function FeaturedSessions() {
             </Link>
           </motion.div>
 
-          {/* Right: session list */}
           <div className="mt-12 lg:mt-0 flex-1 min-w-0">
             {sessions.map((s, i) => (
               <motion.article
@@ -110,7 +102,6 @@ export default function FeaturedSessions() {
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 className="flex flex-col lg:flex-row lg:gap-12 py-8 border-t border-[#e2e8f0] first:border-t-0 first:pt-0"
               >
-                {/* Left: title + time */}
                 <div className="shrink-0 lg:w-[280px] xl:w-[320px]">
                   <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#0f172a] leading-snug">
                     {s.title}
@@ -121,17 +112,16 @@ export default function FeaturedSessions() {
                     {s.type}
                   </p>
                 </div>
-                {/* Right: description + speaker */}
                 <div className="mt-4 lg:mt-0 flex-1 min-w-0">
                   <p className="text-[15px] leading-relaxed text-[#475569]">
                     {s.description}
                   </p>
                   <div className="mt-4 flex items-center gap-3">
-                    <Link href={`/speakers/${s.speakerSlug}`} className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[#e2e8f0] block">
+                    <Link href="/speakers" className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[#e2e8f0] block">
                       <Image src={s.image} alt={s.speaker} fill className="object-cover" sizes="40px" />
                     </Link>
                     <p className="text-[13px] font-semibold uppercase tracking-wide text-[#0f172a]">
-                      <Link href={`/speakers/${s.speakerSlug}`} className="transition-colors hover:text-[#2563eb] focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-1 rounded">
+                      <Link href="/speakers" className="transition-colors hover:text-[#2563eb] focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-1 rounded">
                         {s.speaker}
                       </Link>
                       <span>, {s.org}</span>

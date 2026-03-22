@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | IEEE ICAIC",
-  description: "News and updates from IEEE ICAIC.",
+  title: "Blog | Nexus Summit 2027",
+  description: "News and updates from Nexus Summit.",
 };
 
 export default function BlogPage() {

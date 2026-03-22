@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
     type: "dropdown",
     label: "Conference",
     items: [
-      { href: "/#about", label: "About GAISS" },
+      { href: "/#about", label: "About Nexus" },
       { href: "/#tpc", label: "Technical Program Committee (TPC)" },
       { href: "/#speakers", label: "Keynote Speakers" },
       { href: "/#venue", label: "Venue" },
@@ -61,6 +61,7 @@ export default function NavNextConfo() {
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
   const [navMode, setNavMode] = useState<"glass" | "dark" | "light">("glass");
   const [navVisible, setNavVisible] = useState(true);
+  const [atPageTop, setAtPageTop] = useState(true);
   const lastScrollY = useRef(0);
   const rafId = useRef<number | null>(null);
   const { scrollY } = useScroll();
@@ -88,6 +89,7 @@ export default function NavNextConfo() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const y = latest;
     const prev = lastScrollY.current;
+    setAtPageTop(y < 12);
     if (rafId.current === null) {
       rafId.current = requestAnimationFrame(() => {
         checkNavMode();
@@ -102,7 +104,9 @@ export default function NavNextConfo() {
 
   useEffect(() => {
     checkNavMode();
-    lastScrollY.current = typeof window !== "undefined" ? window.scrollY : 0;
+    const y = typeof window !== "undefined" ? window.scrollY : 0;
+    lastScrollY.current = y;
+    setAtPageTop(y < 12);
   }, []);
 
   useEffect(() => {
@@ -126,15 +130,19 @@ export default function NavNextConfo() {
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >
       <motion.div
-        className={`pointer-events-none absolute inset-0 ${navMode === "glass" ? "backdrop-blur-xl" : ""}`}
+        className={`pointer-events-none absolute inset-0 ${
+          atPageTop ? "" : navMode === "glass" ? "backdrop-blur-xl" : ""
+        }`}
         aria-hidden
         animate={{
           backgroundColor:
-            navMode === "glass"
-              ? "transparent"
-              : navMode === "dark"
-                ? "rgba(255,255,255,0.98)"
-                : "rgba(0,0,0,0.95)",
+            atPageTop
+              ? "rgba(0,0,0,0)"
+              : navMode === "glass"
+                ? "transparent"
+                : navMode === "dark"
+                  ? "rgba(255,255,255,0.98)"
+                  : "rgba(0,0,0,0.95)",
         }}
         transition={{ duration: 0.3 }}
       />
@@ -148,7 +156,7 @@ export default function NavNextConfo() {
           href="/"
           className={`relative z-10 font-bold tracking-[-0.02em] text-xl transition-colors duration-300 hover:opacity-80 ${textLight ? "text-white" : "text-[#1e293b]"}`}
         >
-          GAISS<span className="text-[#2563eb]">.</span>
+          NEXUS<span className="text-[#2563eb]">.</span>
         </Link>
 
         {/* Desktop nav */}

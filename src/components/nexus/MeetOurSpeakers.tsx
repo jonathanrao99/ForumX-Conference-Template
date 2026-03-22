@@ -7,21 +7,21 @@ import { useRef } from "react";
 
 const speakers = [
   {
-    name: "Dr. Hardik Gohel, Ph.D.",
-    slug: "hardik-gohel",
-    role: "Texas A&M University",
-    image: "/speaker-hardik-gohel.png",
+    name: "Alex Morgan",
+    slug: "alex-morgan",
+    role: "Summit Labs",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=90",
   },
   {
-    name: "Dr. Marcus Cole",
-    slug: "marcus-cole",
-    role: "CloudEdge",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=90",
+    name: "Jordan Lee",
+    slug: "jordan-lee",
+    role: "Northwind Ventures",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=90",
   },
   {
-    name: "Nina Patel",
-    slug: "nina-patel",
-    role: "CyberForge",
+    name: "Sam Rivera",
+    slug: "sam-rivera",
+    role: "Horizon Institute",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=90",
   },
 ];
@@ -89,7 +89,7 @@ export default function MeetOurSpeakers() {
               <div className="mt-5 flex items-start justify-between pl-4 pr-4">
                 <div>
                   <Link
-                    href={`/speakers/${s.slug}`}
+                    href="/speakers"
                     className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-wide text-[#0f172a] transition-colors duration-200 hover:text-[#2563eb] focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:ring-offset-2 rounded"
                   >
                     {s.name}

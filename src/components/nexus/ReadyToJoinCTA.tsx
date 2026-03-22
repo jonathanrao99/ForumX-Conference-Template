@@ -42,7 +42,7 @@ export default function ReadyToJoinCTA() {
           {/* Right: description + CTA */}
           <div className="flex flex-col gap-8 lg:max-w-xl">
             <p className="font-inter text-[17px] sm:text-[18px] leading-[1.7] text-white/90">
-              Join the <span className="font-semibold text-white">biggest gathering</span> of <span className="font-semibold text-white">builders and thought leaders</span> in <span className="font-semibold text-white">Generative AI for Secure Systems</span>. Secure your spot before it&apos;s too late.
+              Join <span className="font-semibold text-white">Nexus Summit 2027</span>—where <span className="font-semibold text-white">leaders and practitioners</span> connect on <span className="font-semibold text-white">strategy, innovation, and execution</span>. Customize this copy for your event theme.
             </p>
             <HoverAnimationButton
               href="/#tickets"

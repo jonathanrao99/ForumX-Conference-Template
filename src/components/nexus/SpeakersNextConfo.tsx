@@ -5,10 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const speakers = [
-  { name: "Ava Mitchell", role: "AI Research Lead", org: "Interface Labs", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" },
-  { name: "Rajan Verma", role: "CTO", org: "CloudEdge", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" },
-  { name: "Emily Chen", role: "Head of Product", org: "Arverse", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" },
-  { name: "Carlos Rios", role: "Design Director", org: "CyberForge", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" },
+  { name: "Alex Morgan", role: "Keynote", org: "Summit Labs", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" },
+  { name: "Jordan Lee", role: "Panelist", org: "Northwind Ventures", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" },
+  { name: "Sam Rivera", role: "Workshop Lead", org: "Horizon Institute", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" },
+  { name: "Morgan Blake", role: "Speaker", org: "Meridian Group", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" },
 ];
 
 export default function SpeakersNextConfo() {

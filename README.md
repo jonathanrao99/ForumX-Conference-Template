@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexus Summit — Next.js template
 
-## Getting Started
+A reusable **conference / summit website** built with **Next.js 16**, **React 19**, **Tailwind CSS 4**, and **Framer Motion**. Branding defaults to **Nexus Summit 2027** with placeholder dates, venue, and copy so you can fork and customize for any event.
 
-First, run the development server:
+## Features
+
+- Hero with parallax image, gradient, and CTAs  
+- About + countdown + venue  
+- Speakers, “why attend,” sessions image strip, featured sessions  
+- Tickets (pricing tiers), partners/sponsors marquees, FAQ, CTA, image marquee  
+- Responsive nav with dropdowns and mobile menu  
+- Placeholder pages: `/speakers`, `/agenda`, `/blog`, `/login`, `/signup`, `/privacy`
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customize for your event
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Branding** — Search/replace `Nexus`, `NEXUS`, and `nexusconf.example.com` in `src/` and metadata in `src/app/layout.tsx`.  
+2. **Dates & venue** — `HeroNextConfo.tsx`, `AboutSection.tsx` (`COUNTDOWN_TARGET`), and FAQ.  
+3. **Images** — Most imagery uses **Unsplash** URLs; swap for your assets in `/public` or keep remote URLs (see `next.config.ts` `remotePatterns`).  
+4. **Partners** — `MeetOurPartners.tsx` uses **placehold.co** logos; replace with real logos in `/public/partners` or your CMS.  
+5. **Content** — Edit copy in each component under `src/components/nexus/`.
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+Works on [Vercel](https://vercel.com) or any Node host. Configure `NEXT_PUBLIC_*` env vars if you add a backend later.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use freely for your conference projects. Attribution appreciated but not required.

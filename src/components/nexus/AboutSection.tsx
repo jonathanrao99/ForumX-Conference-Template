@@ -1,11 +1,11 @@
 "use client";
 
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 
-const COUNTDOWN_TARGET = new Date("2026-10-28T09:00:00-05:00"); // Oct 28, 2026 9am Austin time
+const COUNTDOWN_TARGET = new Date("2027-06-12T09:00:00-07:00"); // June 12, 2027 9am PT
 
 function useCountdown(target: Date) {
   const [diff, setDiff] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -37,7 +37,6 @@ function ParallaxImage({
   src,
   alt,
   index,
-  containerRef,
   direction = "down",
   radiusFade,
   cropTop,
@@ -45,19 +44,24 @@ function ParallaxImage({
   src: string;
   alt: string;
   index: number;
-  containerRef: React.RefObject<HTMLDivElement | null>;
   direction?: "down" | "up";
   radiusFade?: "top" | "bottom";
   cropTop?: boolean;
 }) {
+  const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 0.85", "end 0.15"],
+    target: cardRef,
+    offset: ["start end", "end start"],
   });
-  const yDown = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ["0%", "12%", "12%", "0%"]);
-  const yUp = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ["0%", "-12%", "-12%", "0%"]);
-  const y = direction === "up" ? yUp : yDown;
-  const inView = useInView(containerRef, { once: true, amount: 0.1 });
+  /* As the card crosses the viewport: opposite directions for depth */
+  const yRaw = useTransform(
+    scrollYProgress,
+    [0, 1],
+    direction === "up" ? ["18%", "-18%"] : ["-18%", "18%"],
+  );
+  const y = useSpring(yRaw, { stiffness: 400, damping: 40 });
+
+  const inView = useInView(cardRef, { once: true, amount: 0.15 });
 
   const radiusFadePx = useTransform(scrollYProgress, [0, 0.2, 0.5, 1], ["12px", "6px", "0px", "0px"]);
 
@@ -76,22 +80,26 @@ function ParallaxImage({
             borderBottomLeftRadius: radiusFadePx,
             borderBottomRightRadius: radiusFadePx,
           }
-        : { borderRadius: 0 };
+        : {};
 
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className="relative aspect-[4/3] overflow-hidden"
+      className="relative aspect-[4/3] overflow-hidden rounded-xl"
       style={wrapperStyle}
     >
-      <motion.div className="absolute inset-0" style={{ y }}>
+      <motion.div
+        className="absolute inset-0 will-change-transform"
+        style={{ y, backfaceVisibility: "hidden" }}
+      >
         <Image
           src={src}
           alt={alt}
           fill
-          className="object-cover scale-110 grayscale brightness-[0.9] contrast-105"
+          className="object-cover scale-[1.15] grayscale brightness-[0.9] contrast-105"
           style={cropTop ? { objectPosition: "center 22%" } : undefined}
           sizes="(max-width: 768px) 100vw, 50vw"
         />
@@ -144,7 +152,7 @@ export default function AboutSection() {
             meets action
           </h2>
           <p className="font-inter lg:mt-56 text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.7] text-white/90 max-w-xl lg:max-w-2xl">
-            <strong className="font-semibold text-white">GAISS</strong> is a <span className="font-semibold text-white">premier summit</span> bringing together <span className="font-semibold text-white">researchers, founders, and technologists</span> from across the globe. From <span className="font-semibold text-white">visionary keynotes</span> to <span className="font-semibold text-white">practical workshops</span> and <span className="font-semibold text-white">purposeful networking</span>, the event is designed to <span className="font-semibold text-white">spark ideas</span>, <span className="font-semibold text-white">forge partnerships</span>, and shape what&apos;s next in <span className="font-semibold text-white">secure AI systems</span>. Whether you&apos;re a researcher, founder, or technologist, this is where <span className="font-semibold text-white">the future unfolds</span>.
+            <strong className="font-semibold text-white">Nexus Summit</strong> is a <span className="font-semibold text-white">multi-track summit</span> for <span className="font-semibold text-white">executives, builders, and strategists</span> who want to stay ahead of change. From <span className="font-semibold text-white">keynotes and panels</span> to <span className="font-semibold text-white">hands-on sessions</span> and <span className="font-semibold text-white">curated networking</span>, we focus on <span className="font-semibold text-white">actionable insight</span>, <span className="font-semibold text-white">meaningful connections</span>, and <span className="font-semibold text-white">ideas you can apply on Monday</span>. Replace this copy with your event story—this template is built to be customized.
           </p>
         </motion.div>
 
@@ -156,16 +164,14 @@ export default function AboutSection() {
         className="mt-16 lg:mt-24 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 w-full px-6 lg:px-10"
       >
         <ParallaxImage
-            containerRef={imagesRef}
-            src="/about-parallax-left.png"
-            alt="Conference networking"
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80"
+            alt="Conference networking and collaboration"
             index={0}
             direction="down"
           />
           <ParallaxImage
-            containerRef={imagesRef}
-            src="/about-parallax-right.png"
-            alt="Conference exchange"
+            src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&q=80"
+            alt="Audience at a professional conference"
             index={1}
             direction="up"
             cropTop
@@ -183,7 +189,7 @@ export default function AboutSection() {
           {/* Date - left */}
           <div className="text-white">
             <p className="text-sm font-medium uppercase tracking-widest text-white/70">Date</p>
-            <p className="mt-1 text-3xl sm:text-4xl font-bold uppercase tracking-wide font-space-grotesk">Oct 28–30, 2026</p>
+            <p className="mt-1 text-3xl sm:text-4xl font-bold uppercase tracking-wide font-space-grotesk">Jun 12–14, 2027</p>
           </div>
 
           {/* Countdown - center */}
@@ -220,7 +226,7 @@ export default function AboutSection() {
           {/* Venue - right */}
           <div id="venue" className="text-white text-right lg:text-right">
             <p className="text-sm font-medium uppercase tracking-widest text-white/70">Venue</p>
-            <p className="mt-1 text-3xl sm:text-4xl font-bold uppercase tracking-wide font-space-grotesk">Austin, TX</p>
+            <p className="mt-1 text-3xl sm:text-4xl font-bold uppercase tracking-wide font-space-grotesk">San Francisco, CA</p>
           </div>
         </motion.div>
       </div>
@@ -229,8 +235,8 @@ export default function AboutSection() {
       <div className="mt-16 lg:mt-24 w-full -mb-px">
         <div className="relative w-full aspect-[16/9] min-h-[280px]">
           <Image
-            src="/conference-image.JPG"
-            alt="GAISS conference - speaker presenting"
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=80"
+            alt="Speaker on stage at a conference"
             fill
             className="object-cover"
             sizes="100vw"

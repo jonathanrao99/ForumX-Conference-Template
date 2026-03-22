@@ -7,22 +7,22 @@ const items = [
   {
     num: "01",
     title: "Expert Keynotes",
-    body: "Insights from world-class innovators shaping the future.",
+    body: "Hear from leaders who set the agenda for your industry.",
   },
   {
     num: "02",
     title: "Hands-On Workshops",
-    body: "Build skills with practical sessions led by industry experts.",
+    body: "Leave with frameworks and tactics you can use immediately.",
   },
   {
     num: "03",
-    title: "Networking Opportunities",
-    body: "Connect with founders, developers, investors, and tech talent.",
+    title: "Networking",
+    body: "Meet peers, partners, and sponsors in curated settings.",
   },
   {
     num: "04",
-    title: "Startup Showcase",
-    body: "Discover next-gen startups and breakthrough solutions live.",
+    title: "Expo & Demos",
+    body: "Explore tools, services, and solutions from top organizations.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function WhatToExpect() {
         >
           Why attend
           <br />
-          <span className="inline-block pl-16">GAISS 2026</span>
+          <span className="inline-block pl-16">Nexus Summit 2027</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">

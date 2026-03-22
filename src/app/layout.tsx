@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import NavNextConfo from "@/components/gaiss/NavNextConfo";
-import FooterNextConfo from "@/components/gaiss/FooterNextConfo";
+import NavNextConfo from "@/components/nexus/NavNextConfo";
+import FooterNextConfo from "@/components/nexus/FooterNextConfo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,9 +25,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GAISS 2026 — IEEE Conference on Generative AI for Secure Systems",
+  title: "Nexus Summit 2027 — Professional Conference Template",
   description:
-    "Join researchers and practitioners at GAISS. 28–30 October 2026. The University of Texas at Austin.",
+    "Nexus Summit 2027. June 12–14, 2027 · San Francisco, CA. A modern, reusable conference website template—customize branding, dates, and content for your event.",
 };
 
 export default function RootLayout({
