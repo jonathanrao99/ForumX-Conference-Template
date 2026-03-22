@@ -18,8 +18,6 @@ The demo uses **ForumX Summit 2027** as placeholder branding—swap it everywher
 
 ![ForumX — ticket tiers](docs/readme-assets/forumx-04-tickets.png)
 
-![ForumX — dark UI sections (about / marquee / footer style)](docs/readme-assets/forumx-05-dark-sections.png)
-
 ---
 
 ## Run locally
